@@ -1,5 +1,25 @@
 * {
+    font-family: Lato, serif;
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+#title:hover {
+    opacity: 0.69;
+}
+
+#title {
+    margin: 2px;
+    font-size: 3vw;
+    padding: 35px;
+    text-align: center;
+    color: #182928;
+    background-image: linear-gradient(to right, #ffafbd, #ffc3a0);
+    transition: .5s ease;
+}
+
+#titleContent > p {
+    text-align: center;
+    color: red;
+}
