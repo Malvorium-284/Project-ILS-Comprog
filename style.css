@@ -1,6 +1,5 @@
 * {
     font-family: Lato, serif;
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
@@ -10,9 +9,8 @@
 }
 
 #title {
-    margin: 2px;
     font-size: 3vw;
-    padding: 35px;
+    padding: 25px;
     text-align: center;
     color: #182928;
     background-image: linear-gradient(to right, #ffafbd, #ffc3a0);
@@ -22,4 +20,78 @@
 #titleContent > p {
     text-align: center;
     color: red;
+}
+
+#enterBTN {
+    display: flex;
+    justify-content: center;
+    width: 25%;
+    max-width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    text-align: center;      
+    font-size: 24px;
+    padding: 6px 8px;   
+}
+
+#errorMsg {
+    font-size: 2vw;
+    text-align: center;
+    color: red;
+    font-weight: 800;
+}
+
+
+.grid_Money {
+    display: grid;  
+    margin: 1vh auto;
+    border: 2px blue solid;
+    height: 5vw;
+    width: 40%;
+    grid-template-columns: 100%;
+    border-radius: 5px 8px;
+    transition: width 1.5s, height 1.5s;
+}
+
+.grid_Money:hover {
+    width: 44%;
+    height: 8vw;
+    font-size: 2.5vw;
+}
+
+
+.moneyInput {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: font-size 1.0s;
+    font-size: 1.6em;
+    overflow: hidden;
+}
+
+.grid_Item {
+    display: grid;
+    border: 5px red solid;
+    height: 130vh;
+    width: 95%;
+    grid-template-columns: 50% ;
+    grid-gap: 0.5ex;
+    padding: 0.5vh;
+    transition: .8s ease;
+    margin: 1vh auto;
+} 
+
+.grid_Item .result {
+    display: none;
+}
+
+.grid_Item > div:hover {
+    background-color: rgba(245, 245, 220, 0.3);
+}
+
+.box {
+    background-color: rgba(245, 245, 220, 1);
+    color: black;
+    border-radius: 3px;
+    border: 2px dodgerblue solid;
 }
