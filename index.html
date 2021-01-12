@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title> PC Build Helper </title>
+        <title> PC Build Site </title>
         <link href="style.css" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"> 
@@ -17,30 +17,95 @@
     <body>
 
 
-        <div id="title">
-            <p> PC Builder Website </p> <br> <hr> <br>
-            <div id="titleContent">
-                <p> Welcome. Feel free to use the features provided.</p>
-                <p> Group 6 of IT-211 </p>
+        <div class="main">
+            <div id="title">
+                <p> PC Component Picker Site </p> <br> <hr> <br>
+                <div id="titleContent">
+                    <p> Group 6 of IT-211 </p>
+                </div>
             </div>
-        </div>
-
-        
-        <div class="grid_Money">
-            <div class="box moneyInput" contenteditable="true"> Type your budget here.</div>
-        </div>
-
-        
-        <button type="button" id="enterBTN"> Enter Value</button> <br>
-        <p id="errorMsg"> Hello. </p>
-
-
-        <div class="grid_Item">
-            <div class="box CPU"> CPU Here </div>
-            <div class="box Graphics"> Graphics Here </div>
-            <div class="box RAM"> RAM Here</div>
-            <div class="box HDD_SDD"> HDD or SSD here</div>
-            <div class="box result"> Result here </div>
+    
+            
+            <div class="inputBG">
+                <div class="grid_Money">
+                    <div class="box moneyInput" contenteditable="true"> Type your budget here.</div>
+                </div>
+            </div>
+    
+            
+            <button type="button" id="enterBTN"> Enter Value</button> <br>
+            <p id="errorMsg">  </p>
+    
+    
+            <div class="grid_Item">
+                <div class="box budget">
+                    <div class="gridItem_Style" id="budgetContent">
+                        _blank_
+                    </div>
+                </div>
+                <div class="box CPU">  
+                    <div class="gridItem_Style" id="cpuContent">
+                        <img src="images/placeholder-image.jpg" alt="placeholder_img"> <br>
+                        <form>
+                            <label for="Processor"> <b> CPU: </b> </label>
+                            <select id="Processor" name="Processor">
+                                <option value="Option1"> Processor 1 </option>
+                                <option value="Option2"> Processor 2 </option>
+                                <option value="Option3"> Processor 3 </option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+                <div class="box Graphics"> 
+                    <div class="gridItem_Style" id="cardGraphicsContent">
+                        <img src="images/placeholder-image.jpg" alt="placeholder_img"> <br>
+                        <form>
+                            <label for="Graphics_Card"> <b> GPU: </b> </label>
+                            <select id="Graphics_Card" name="Graphics_Card">
+                                <option value="Option1"> Option1 </option>
+                                <option value="Option2"> Option2 </option>
+                                <option value="Option3"> Option3 </option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+                <div class="box RAM"> 
+                    <div class="gridItem_Style" id="ramContent">
+                        <img src="images/placeholder-image.jpg" alt="placeholder_img"> <br>
+                        <form>
+                            <label for="RAM_Memory"> <b> RAM: </b> </label>
+                            <select id="RAM_Memory" name="RAM_Memory">
+                                <option value="Option1"> Option1 </option>
+                                <option value="Option2"> Option2 </option>
+                                <option value="Option3"> Option3 </option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+                <div class="box HDD_SDD"> 
+                    <div class="gridItem_Style" id="storage"> 
+                        <img src="images/placeholder-image.jpg" alt="placeholder_img"> <br>
+                        <form>
+                            <label for="Storage_Drive"> <b> Storage: </b> </label>
+                            <select id="Storage_Drive" name="Storage_Drive">
+                                <option value="Option1"> Option1 </option>
+                                <option value="Option2"> Option2 </option>
+                                <option value="Option3"> Option3 </option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+                <div class="box result"> 
+                    <div class="gridItem_Style" id="resultContent">
+                        <p>
+                            CPU: Name --- Price <br>
+                            GPU: Name --- Price <br> 
+                            RAM: Name --- Price <br>
+                            Storage: Name --- Price <br>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
 
 
