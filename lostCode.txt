@@ -1,0 +1,122 @@
+    var prevAttrValue = 0;
+    var currentAttrValue = 0;
+
+    function shiftCurrentToPrev() {
+        prevAttrValue = currentAttrValue;
+    }
+
+    // 4 change() functions below that I came up with allows for dynamically changing text 
+    // it depends on what's the current text or value of the option tag
+    // changes accordingly when switched to different value
+
+    // !! sorry for the messy code, i was sleep deprived when i made it !!
+    // - Udal
+
+    $("#Processor").change(function() {
+        shiftCurrentToPrev();
+       currentAttrValue = $(this).val();
+        for (let optAttrValue = 0; optAttrValue <= total_processorNames; optAttrValue++) {
+            if ($(this).val() == optAttrValue) {
+                for (let model in components.processor) {
+                    if (`${components.processor[model].value}` == optAttrValue) {
+                        $("#processorPrice").text(`Price: ${components.processor[model].price}`);
+                        if (!global_isOptionsChangedOnce) {
+                            console.log(`PrevAttr: ${prevAttrValue}, CurrentAttr: ${currentAttrValue}`);
+                            global_isOptionsChangedOnce = true;
+                            let balance = parseInt($("#number_Money").text(), 10);
+                            let newBalance = balance - components.processor[model].price;
+                            $("#number_Money").text(newBalance);
+                        } else {
+                            console.log(`PrevAttr: ${prevAttrValue}, CurrentAttr: ${currentAttrValue}`);
+                            let balance = parseInt($("#number_Money").text(), 10);
+                            for (let model in components.processor) {
+                                if (`${components.processor[model].value}` == prevAttrValue) {
+                                    let newBalance = balance += components.processor[model].price;
+                                    $("#number_Money").text(newBalance);
+                                    /*
+                                    let balanceCheck = newBalance;
+                                    console.log(balanceCheck);
+                                    if (balanceCheck < 0) {
+                                        alert("Your balance will turn negative if you do this. Action stopped.");
+                                        break;
+                                    } else { 
+                                        $("#number_Money").text(newBalance);
+                                        break;
+                                    }
+                                    */
+                                    
+                                    
+                                }
+                            }
+                            for (let model in components.processor) {
+                                if (`${components.processor[model].value}` == currentAttrValue) {
+                                    let newBalance = balance -= components.processor[model].price
+                                    console.log(newBalance);
+                                    if (newBalance < 0) {
+                                        for (let model in components.processor) {
+                                            if (`${components.processor[model].value}` == prevAttrValue) {
+                                                $(`#${prevAttrValue}`).attr("selected", "selected");
+                                                alert("Your balance will turn negative if you do this. Action stopped.");
+                                                $(`#${prevAttrValue}`).removeAttr("selected");
+                                                break;
+                                            }
+                                        }
+                                        break;
+                                    } else {
+                                        $("#number_Money").text(newBalance);
+                                        break;
+                                    }
+                                    
+                                }
+                            }
+                        }
+                        break;
+                    }
+                }
+            }
+        }
+    });
+
+    var graphicsPrevAttrValue = 0;
+    var graphicsCurrentAttrValue = 0;
+
+    function graphicsShiftCurrentToPrev() {
+        graphicsPrevAttrValue = graphicsCurrentAttrValue;
+    }
+
+    $("#Graphics_Card").change(function() {
+        graphicsShiftCurrentToPrev();
+        graphicsCurrentAttrValue = $(this).val();
+        for (let optAttrValue = 0; optAttrValue <= total_processorNames; optAttrValue++) {
+            if ($(this).val() == optAttrValue) {
+                for (let model in components.graphicsCard) {
+                    if (`${components.graphicsCard[model].value}` == optAttrValue) {
+                        $("#graphicsPrice").text(`Price: ${components.graphicsCard[model].price}`);
+                        if (!global_isOptionsChangedOnce) {
+                            global_isOptionsChangedOnce = true;
+                            let balance = parseInt($("#number_Money").text(), 10);
+                            let newBalance = balance - components.graphicsCard[model].price;
+                            $("#number_Money").text(newBalance);
+                        } else {
+                            let balance = parseInt($("#number_Money").text(), 10);
+                            for (let model in components.graphicsCard) {
+                                if (`${components.graphicsCard[model].value}` == graphicsPrevAttrValue) {
+                                    let newBalance = balance += components.graphicsCard[model].price;
+                                    $("#number_Money").text(newBalance);
+                                    break;
+                                }
+                            }
+                            for (let model in components.graphicsCard) {
+                                if (`${components.graphicsCard[model].value}` == graphicsCurrentAttrValue) {
+                                    let newBalance = balance -= components.graphicsCard[model].price
+                                    $("#number_Money").text(newBalance);
+                                    break;
+                                }
+                            }
+                        }
+                        break;
+                    }
+                }
+            }
+        }
+    });

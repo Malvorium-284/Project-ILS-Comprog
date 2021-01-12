@@ -81,7 +81,7 @@ img {
     font-weight: 800;
 }
 
-#budgetContent {
+#budgetContent, #number_Money, #currencySign {
     font-size: 1.5vw;
     font-weight: 800;
 }
@@ -170,4 +170,9 @@ img {
 .ContentHidden {
     visibility: 0;
     opacity: 0;
+}
+
+.price {
+    margin: 3px 3px;
+    font-weight: 800;
 }

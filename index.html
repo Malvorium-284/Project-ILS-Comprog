@@ -19,14 +19,14 @@
 
         <div class="main">
             <div id="title">
-                <p> PC Component Picker Site </p> <br> <hr> <br>
+                <p> PC Builder Site </p> <br> <hr> <br>
                 <div id="titleContent">
                     <p> Group 6 of IT-211 </p>
                 </div>
             </div>
     
             
-            <div class="inputBG">
+            <div class="inputBG">   
                 <div class="grid_Money">
                     <div class="box moneyInput" contenteditable="true"> Type your budget here.</div>
                 </div>
@@ -35,12 +35,15 @@
             
             <button type="button" id="enterBTN"> Enter Value</button> <br>
             <p id="errorMsg">  </p>
+            <button type="button" id="debugBTN"> Debug Button </button>
     
     
             <div class="grid_Item">
                 <div class="box budget">
-                    <div class="gridItem_Style" id="budgetContent">
-                        _blank_
+                    <div class="gridItem_Style" >
+                        <span id="currencySign"> P </span>
+                        <span id="number_Money"> 000000 </span> <br> 
+                        <span id="budgetContent"> _blank_ </span>
                     </div>
                 </div>
                 <div class="box CPU">  
@@ -49,11 +52,10 @@
                         <form>
                             <label for="Processor"> <b> CPU: </b> </label>
                             <select id="Processor" name="Processor">
-                                <option value="Option1"> Processor 1 </option>
-                                <option value="Option2"> Processor 2 </option>
-                                <option value="Option3"> Processor 3 </option>
+                                <option value="" selected="selected" hidden="hidden"> Choose here </option>
                             </select>
                         </form>
+                        <p class="price "id="processorPrice"> Price Will Show Here </p>
                     </div>
                 </div>
                 <div class="box Graphics"> 
@@ -62,11 +64,10 @@
                         <form>
                             <label for="Graphics_Card"> <b> GPU: </b> </label>
                             <select id="Graphics_Card" name="Graphics_Card">
-                                <option value="Option1"> Option1 </option>
-                                <option value="Option2"> Option2 </option>
-                                <option value="Option3"> Option3 </option>
+                                <option value="" selected="selected" hidden="hidden"> Choose here </option>
                             </select>
                         </form>
+                        <p class="price "id="graphicsPrice"> Price Will Show Here </p>
                     </div>
                 </div>
                 <div class="box RAM"> 
@@ -75,11 +76,10 @@
                         <form>
                             <label for="RAM_Memory"> <b> RAM: </b> </label>
                             <select id="RAM_Memory" name="RAM_Memory">
-                                <option value="Option1"> Option1 </option>
-                                <option value="Option2"> Option2 </option>
-                                <option value="Option3"> Option3 </option>
+                                <option value="" selected="selected" hidden="hidden"> Choose here </option>
                             </select>
                         </form>
+                        <p class="price "id="ramPrice"> Price Will Show Here </p>
                     </div>
                 </div>
                 <div class="box HDD_SDD"> 
@@ -88,11 +88,10 @@
                         <form>
                             <label for="Storage_Drive"> <b> Storage: </b> </label>
                             <select id="Storage_Drive" name="Storage_Drive">
-                                <option value="Option1"> Option1 </option>
-                                <option value="Option2"> Option2 </option>
-                                <option value="Option3"> Option3 </option>
+                                <option value="" selected="selected" hidden="hidden"> Choose here </option>
                             </select>
                         </form>
+                        <p class="price "id="storagePrice"> Price Will Show Here </p>
                     </div>
                 </div>
                 <div class="box result"> 
