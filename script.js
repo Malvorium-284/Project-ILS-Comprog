@@ -7,7 +7,7 @@ window.onload = function() {
     }
 
     var global_isOptionsAdded; 
-    var global_isOptionsChangedOnce;
+    var global_balance;
     var total_processorNames = 0;
     var total_graphicCardNames = 0;
     var total_ramNames = 0;
@@ -211,10 +211,11 @@ window.onload = function() {
             $(".grid_Money").css({"border": "4px red solid"});
         } else {
             $("#errorMsg").text("Operation successful.");
+            global_balance = inputValue;
             inputValid();
             console.log(`Balance: ${inputValue}, global variable`);
             $("#number_Money").text(`${inputValue}`);
-            $("#budgetContent").html(`- Current Budget - <br> If you see Red budget, it means that your current choices combined exceeds your current budget. Please re-evaluate your choices.`);
+            $("#budgetContent").html(`- Current Budget - <br> If you see Red budget, it means that your current choices combined exceeds your current budget. <br> If that's the case, please re-evaluate your choices. Thank you.`);
             loadOptionItems();
         }
     });
@@ -223,54 +224,92 @@ window.onload = function() {
         testAddOption()
     });
 
+    var processorChoicePrice = 0;
+    var graphicsChoicePrice = 0;
+    var ramChoicePrice = 0;
+    var storageChoicePrice = 0;
+    var sum = 0;
+
+    // 4 global scope variables are placed here for me to see them quickly
+
     $("#Processor").change(function() {
-        for (let optAttrValue = 0; optAttrValue <= total_processorNames; optAttrValue++) {
-            if ($(this).val() == optAttrValue) {
-                for (let model in components.processor) {
-                    if (`${components.processor[model].value}` == optAttrValue) {
-                        $("#processorPrice").text(`Price: ${components.processor[model].price}`);
-                    }
-                }
-            }
-        } 
-    });
+             for (model in components.processor) {
+                 let value = components.processor[model].value;
+                 if (value == $(this).val()) {
+                     let processorPrice = components.processor[model].price;
+                     console.log(`Log: processorPrice: ${processorPrice}`);
+                     $("#processorPrice").text(`Price: ${processorPrice}`);
+                     processorChoicePrice = processorPrice;
+                     combinedChoiceValidity();
+                     $("#cpuModel").text(`${components.processor[model].name}`);
+                     break;
+                 } 
+             }
+        });
 
     $("#Graphics_Card").change(function() {
-        for (let optAttrValue = 0; optAttrValue <= total_graphicCardNames; optAttrValue++) {
-            if ($(this).val() == optAttrValue) {
-                for (let model in components.graphicsCard) {
-                    if (`${components.graphicsCard[model].value}` == optAttrValue) {
-                        $("#graphicsPrice").text(`Price: ${components.graphicsCard[model].price}`);
-                    }
-                }
-            }
+        for (model in components.graphicsCard) {
+            let value = components.graphicsCard[model].value;
+            if (value == $(this).val()) {
+                let graphicsPrice = components.graphicsCard[model].price;
+                console.log(`Log: graphicsPrice: ${graphicsPrice}`);
+                $("#graphicsPrice").text(`Price: ${graphicsPrice}`);
+                graphicsChoicePrice = graphicsPrice;
+                combinedChoiceValidity();
+                $("#gpuModel").text(`${components.graphicsCard[model].name}`);
+                break;
+            } 
         }
     });
-
-  
 
     $("#RAM_Memory").change(function() {
-        for (let optAttrValue = 0; optAttrValue <= total_ramNames; optAttrValue++) {
-            if ($(this).val() == optAttrValue) {
-                for (let model in components.RAM) {
-                    if (`${components.RAM[model].value}` == optAttrValue) {
-                        $("#ramPrice").text(`Price: ${components.RAM[model].price}`);
-                    }
-                }
-            }
+        for (model in components.RAM) {
+            let value = components.RAM[model].value;
+            if (value == $(this).val()) {
+                let ramPrice = components.RAM[model].price;
+                console.log(`Log: RAMPrice: ${ramPrice}`);
+                $("#ramPrice").text(`Price: ${ramPrice}`);
+                ramChoicePrice = ramPrice;
+                combinedChoiceValidity();
+                $("#ramModel").text(`${components.RAM[model].name}`);
+                break;
+            } 
         }
     });
+
     $("#Storage_Drive").change(function() {
-        for (let optAttrValue = 0; optAttrValue <= total_storageNames; optAttrValue++) {
-            if ($(this).val() == optAttrValue) {
-                for (let model in components.StorageDrive) {
-                    if (`${components.StorageDrive[model].value}` == optAttrValue) {
-                        $("#storagePrice").text(`Price: ${components.StorageDrive[model].price}`);
-                    }
-                }
-            }
+        for (model in components.StorageDrive) {
+            let value = components.StorageDrive[model].value;
+            if (value == $(this).val()) {
+                let storagePrice = components.StorageDrive[model].price;
+                console.log(`Log: graphicsPrice: ${storagePrice}`);
+                $("#storagePrice").text(`Price: ${storagePrice}`);
+                storageChoicePrice = storagePrice;
+                combinedChoiceValidity();
+                $("#storageModel").text(`${components.StorageDrive[model].name}`);
+                break;
+            } 
         }
+
     });
+
+    function combinedChoiceValidity() { 
+        // check if all price choices exceed the current budget
+        /*
+        colors certain elements as a visual warning to user.
+        */
+        console.log(global_balance);
+        sum = processorChoicePrice + graphicsChoicePrice + ramChoicePrice + storageChoicePrice;
+        console.log(sum);
+        if (sum > global_balance) {
+            $("#currencySign, #number_Money, #budgetContent, .price").css({"color": "red"});
+            $("#cpuModel, #cpuModelPrice, #gpuModel, #gpuModelPrice, #ramModel, #ramModelPrice, #storageModel, #storageModelPrice, #priceTotal").css({"color": "red"});
+            $("#priceTotal").text(sum);
+        } else {
+            $("#currencySign, #number_Money, #budgetContent, .price").css({"color": "black"});
+            $("#priceTotal").text(sum);
+        }
+    }
 
     function inputValid() {
         $(".grid_Item").removeClass("ContentHidden").addClass("ContentVisible");

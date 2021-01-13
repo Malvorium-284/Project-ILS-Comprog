@@ -74,6 +74,10 @@ img {
     border: 4px solid #f8f8f8;
 }
 
+#debugBTN {
+    display: none;
+}
+
 #errorMsg {
     font-size: 2vw;
     text-align: center;
@@ -82,7 +86,7 @@ img {
 }
 
 #budgetContent, #number_Money, #currencySign {
-    font-size: 1.5vw;
+    font-size: 1.3vw;
     font-weight: 800;
 }
 
