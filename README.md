@@ -5,4 +5,6 @@ Group 6 of subject Computer Programming 5 & 6
 
 Site Preview: https://malvorium-284.github.io/Project-ILS-Comprog/
 
+!! The site in site preview is no longer used and worked on anymore. !!
+
 **IT-211**
