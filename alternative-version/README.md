@@ -1,5 +1,5 @@
 # Project-ILS-Comprog
 
-A new version of project. The files in root directory are no longer being used and is scrapped.
+The files in this folder are the ones being worked on currently. The files in root directory are no longer being used and now abandoned.
 
 **IT-211**
