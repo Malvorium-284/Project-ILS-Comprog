@@ -1,0 +1,123 @@
+<!DOCTYPE html> 
+<html lang="en">
+    <head>
+
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> PC Recommender </title>
+        <link href="Altstyle.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"> 
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <script src="Altscript.js"></script>
+
+
+    </head>
+    <body>
+
+
+        <div class="main">
+            <div id="title">
+                <p> PC Recommender </p> <br> <hr> <br>
+                <div id="titleContent">
+                    <p> Find out what PC probably fits you! </p>
+                </div>
+            </div>
+    
+            
+            <div class="inputBG">   
+                <div class="grid_Money">
+                    <div class="box moneyInput" contenteditable="true"> Type your budget here.</div>
+                </div>
+            </div>
+    
+            
+            <button type="button" id="enterBTN"> Enter Value</button> <br>
+            <p id="errorMsg">  </p>
+           
+        <div class="mainContent_recommender">
+            <div class="grid_Recommender">
+                <div class="gridItem_balanceCell cell_Style">
+                    Budget Number
+                </div>
+
+                <div class="gridItem_interestCell cell_Style">
+                    <form class="radio_inline">
+                        <p> Desired PC?</p>
+                        <br>
+                        <label for="gaming"> Gaming </label>
+                        <input type="radio" id="gaming" name="radio"> 
+                        <label for="OfficeSchoolwork"> Office / Schoolwork </label>
+                        <input type="radio" id="OfficeSchoolwork" name="radio"> 
+                        <label for="budget"> Budget  </label>
+                        <input type="radio" id="budget" name="radio"> 
+                        <label for="decent"> Decent/Average  </label>
+                        <input type="radio" id="decent" name="radio"> 
+                    </form>
+                </div>
+
+                <div class="gridItem_generateBTNCell">
+                    <button type="button" id="resetBTN"> Recommend Me</button> 
+                </div>
+
+                <div class="gridItem_sectionCellTitle cell_Style"> 
+                    <h2> Recommended PC For You</h2> 
+                </div>
+
+                <div class="gridItem_pcCellA cell_Style">
+                    <img src="images/placeholder-image.jpg" alt="placeholder-image"> <br>
+                    <span> PC Item #1</span>
+                    <p class="paragraphDescription"> <br>
+                        Info: Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br>
+                        Info: Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br>
+                        Info: <br>
+                        <br>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio facilis dolores eligendi. Officia exercitationem consequuntur fugit, iste incidunt voluptate cum? Nisi mollitia nihil ab earum voluptatibus corrupti quod consequuntur vel.
+                    </p>
+                </div>
+
+                <div class="gridItem_pcCellB cell_Style">
+                    <img src="images/placeholder-image.jpg" alt="placeholder-image"> <br> 
+                    <span> PC Item #2 </span>
+                    <p class="paragraphDescription"> <br>
+                        Info: Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br>
+                        Info: <br>
+                        Info: Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br>
+                        <br>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio facilis dolores eligendi. Officia exercitationem consequuntur fugit, iste incidunt voluptate cum? Nisi mollitia nihil ab earum voluptatibus corrupti quod consequuntur vel.
+                    </p>
+                </div>
+
+                <div class="gridItem_pcCellC cell_Style">
+                    <img src="images/placeholder-image.jpg" alt="placeholder-image"> <br> 
+                    <span> PC Item #3</span>
+                    <p class="paragraphDescription"> <br>
+                        Info: Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br>
+                        Info: Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br>
+                        Info: Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br>
+                        <br>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio facilis dolores eligendi. Officia exercitationem consequuntur fugit, iste incidunt voluptate cum? Nisi mollitia nihil ab earum voluptatibus corrupti quod consequuntur vel.
+                    </p>
+                </div>
+
+                <div class="gridItem_pcCellD cell_Style">
+                    <img src="images/placeholder-image.jpg" alt="placeholder-image"> <br> 
+                    <span> PC Item #4</span>
+                    <p class="paragraphDescription"> <br>
+                        Info: <br>
+                        Info: Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br>
+                        Info: Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br>
+                        <br>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio facilis dolores eligendi. Officia exercitationem consequuntur fugit, iste incidunt voluptate cum? Nisi mollitia nihil ab earum voluptatibus corrupti quod consequuntur vel.
+                    </p>
+                </div>
+
+                <div class="gridItem_pcCellE cell_Style">
+                    <br>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae aliquam quam placeat! Magni numquam cupiditate adipisci qui sit tempore pariatur! Consectetur, ratione laudantium deleniti asperiores eligendi incidunt odio sequi adipisci!
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
