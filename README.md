@@ -9,4 +9,4 @@ Site Preview: https://malvorium-284.github.io/Project-ILS-Comprog/
 
 !! The site in site preview is no longer used and worked on anymore. !!
 
-**IT-211**
+**Disclaimer: Any images used here are not ours.**
